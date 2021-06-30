@@ -15,6 +15,11 @@ namespace ConsoleUI
             {
                 Console.WriteLine(product.ProductName);
             }
+            InMemoryProductDal inMemoryProductDal = new InMemoryProductDal();
+            foreach (var productCategory in inMemoryProductDal.GetAllByCategory(1)) 
+            {
+                Console.WriteLine("Cat = " + productCategory.CategoryId);
+            }
         }
     }
 }
